@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — PersonaWeb CMS</title>
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+    <!-- Mobile sidebar toggle -->
+    <button class="sidebar-toggle" id="sidebar-toggle">☰</button>
+
+    <div class="dash-layout">
+
+        <!-- ═══════════ SIDEBAR ═══════════ -->
+        <aside class="dash-sidebar">
+            <div class="sidebar-logo">
+                <div class="logo-icon">&lt;/&gt;</div>
+                <span>PERSONAWEB</span>
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#" data-panel="panel-overview" class="active"><span class="nav-icon">📊</span> Overview</a>
+                </li>
+                <li><a href="#" data-panel="panel-hero"><span class="nav-icon">🏠</span> Hero Section</a></li>
+                <li><a href="#" data-panel="panel-projects"><span class="nav-icon">💼</span> Projects</a></li>
+                <li><a href="#" data-panel="panel-experiences"><span class="nav-icon">🏢</span> Experience</a></li>
+                <li><a href="#" data-panel="panel-certs"><span class="nav-icon">📜</span> Certificates</a></li>
+                <li><a href="#" data-panel="panel-skills"><span class="nav-icon">⚡</span> Skills</a></li>
+                <li><a href="#" data-panel="panel-contact"><span class="nav-icon">📬</span> Contact</a></li>
+                <li><a href="#" data-panel="panel-settings"><span class="nav-icon">⚙️</span> Settings</a></li>
+            </ul>
+            <div class="sidebar-actions">
+                <a href="index.html" target="_blank"><span class="nav-icon">🌐</span> View Portfolio</a>
+                <button id="logout-btn"><span class="nav-icon">🚪</span> Logout</button>
+            </div>
+        </aside>
+
+        <!-- ═══════════ MAIN ═══════════ -->
+        <main class="dash-main">
+
+            <div class="dash-topbar">
+                <h1 id="panel-title">Dashboard</h1>
+                <div class="user-badge">
+                    <div class="avatar">👤</div>
+                    <span id="user-email">admin</span>
+                </div>
+            </div>
+
+            <!-- ══════ OVERVIEW PANEL ══════ -->
+            <div class="dash-panel active" id="panel-overview">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-projects">0</div>
+                        <div class="stat-label">Projects</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-experiences">0</div>
+                        <div class="stat-label">Experiences</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-certificates">0</div>
+                        <div class="stat-label">Certificates</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="stat-skills">0</div>
+                        <div class="stat-label">Skills</div>
+                    </div>
+                </div>
+                <div class="panel-card">
+                    <div class="panel-card-title">Quick Guide</div>
+                    <p style="color:var(--text-grey);line-height:1.9;font-size:15px;">
+                        Welcome to your <span style="color:var(--slime);">PersonaWeb</span> Content Management
+                        System.<br>
+                        Use the sidebar to navigate between sections. Every change you make is saved to your browser's
+                        local storage and instantly reflected on your portfolio page.<br><br>
+                        <strong style="color:var(--white);">Quick tips:</strong><br>
+                        ▹ <strong>Hero Section</strong> — Edit your name, title, summary, profile picture, and typing
+                        animation texts.<br>
+                        ▹ <strong>Projects</strong> — Add, edit, or remove portfolio projects with images and tech
+                        tags.<br>
+                        ▹ <strong>Experience</strong> — Build your career timeline with highlights.<br>
+                        ▹ <strong>Certificates</strong> — Showcase your professional certifications.<br>
+                        ▹ <strong>Skills</strong> — Organize skills by category with proficiency levels.<br>
+                        ▹ <strong>Contact</strong> — Update your contact information and social links.<br>
+                        ▹ <strong>Settings</strong> — Change login credentials or reset all data.
+                    </p>
+                </div>
+            </div>
+
+            <!-- ══════ HERO PANEL ══════ -->
+            <div class="dash-panel" id="panel-hero">
+                <form id="hero-form">
+                    <div class="panel-card">
+                        <div class="panel-card-title">Profile Image</div>
+                        <div class="image-upload">
+                            <div class="image-preview" id="profile-img-preview">
+                                <span class="placeholder-icon">👤</span>
+                            </div>
+                            <div>
+                                <label class="upload-btn">
+                                    📁 Upload Photo
+                                    <input type="file" accept="image/*" id="profile-upload">
+                                </label>
+                                <p style="font-size:12px;color:var(--text-grey);margin-top:8px;">Recommended: 400×400px,
+                                    JPG or PNG</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-card-title">Hero Content</div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="hero-name-input">Full Name</label>
+                                <input id="hero-name-input" placeholder="Abed Nego">
+                            </div>
+                            <div class="field">
+                                <label for="hero-title-input">Primary Title</label>
+                                <input id="hero-title-input" placeholder="Fullstack Engineer">
+                            </div>
+                        </div>
+                        <div class="field" style="margin-bottom:20px">
+                            <label for="hero-subtitle-input">Subtitle / Tagline</label>
+                            <input id="hero-subtitle-input" placeholder="Crafting Digital Experiences...">
+                        </div>
+                        <div class="field" style="margin-bottom:20px">
+                            <label for="hero-summary-input">About Summary</label>
+                            <textarea id="hero-summary-input" rows="4"
+                                placeholder="Write a brief summary about yourself..."></textarea>
+                        </div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="hero-resume-input">Resume Link</label>
+                                <input id="hero-resume-input" placeholder="https://...">
+                            </div>
+                            <div class="field">
+                                <label for="hero-typing-input">Typing Texts (comma separated)</label>
+                                <input id="hero-typing-input" placeholder="Fullstack Engineer, UI/UX Enthusiast">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-save">💾 Save Hero Section</button>
+                </form>
+            </div>
+
+            <!-- ══════ PROJECTS PANEL ══════ -->
+            <div class="dash-panel" id="panel-projects">
+                <button class="btn-add" id="add-project">➕ Add New Project</button>
+                <div class="item-list" id="projects-list"></div>
+            </div>
+
+            <!-- ══════ EXPERIENCE PANEL ══════ -->
+            <div class="dash-panel" id="panel-experiences">
+                <button class="btn-add" id="add-experience">➕ Add New Experience</button>
+                <div class="item-list" id="experiences-list"></div>
+            </div>
+
+            <!-- ══════ CERTIFICATES PANEL ══════ -->
+            <div class="dash-panel" id="panel-certs">
+                <button class="btn-add" id="add-cert">➕ Add New Certificate</button>
+                <div class="item-list" id="certs-list"></div>
+            </div>
+
+            <!-- ══════ SKILLS PANEL ══════ -->
+            <div class="dash-panel" id="panel-skills">
+                <button class="btn-add" id="add-skill-cat">➕ Add New Category</button>
+                <div id="skills-panel-content"></div>
+            </div>
+
+            <!-- ══════ CONTACT PANEL ══════ -->
+            <div class="dash-panel" id="panel-contact">
+                <form id="contact-panel-form">
+                    <div class="panel-card">
+                        <div class="panel-card-title">Contact Information</div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="contact-email-input">Email</label>
+                                <input type="email" id="contact-email-input">
+                            </div>
+                            <div class="field">
+                                <label for="contact-phone-input">Phone</label>
+                                <input id="contact-phone-input">
+                            </div>
+                        </div>
+                        <div class="field" style="margin-bottom:20px">
+                            <label for="contact-location-input">Location</label>
+                            <input id="contact-location-input">
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-card-title">Social Links</div>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="contact-linkedin-input">LinkedIn URL</label>
+                                <input id="contact-linkedin-input">
+                            </div>
+                            <div class="field">
+                                <label for="contact-github-input">GitHub URL</label>
+                                <input id="contact-github-input">
+                            </div>
+                        </div>
+                        <div class="field" style="margin-bottom:20px">
+                            <label for="contact-twitter-input">Twitter / X URL</label>
+                            <input id="contact-twitter-input">
+                        </div>
+                    </div>
+
+                    <div class="panel-card">
+                        <div class="panel-card-title">Contact Message</div>
+                        <div class="field">
+                            <label for="contact-message-input">Message for Visitors</label>
+                            <textarea id="contact-message-input" rows="3"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn-save" style="margin-top:4px;">💾 Save Contact Info</button>
+                </form>
+            </div>
+
+            <!-- ══════ SETTINGS PANEL ══════ -->
+            <div class="dash-panel" id="panel-settings">
+                <form id="settings-form">
+                    <div class="panel-card">
+                        <div class="panel-card-title">Login Credentials</div>
+                        <p style="color:var(--text-grey);font-size:13px;margin-bottom:20px;">
+                            Change your dashboard login credentials. In the future, this will be replaced with Google
+                            OAuth authentication.
+                        </p>
+                        <div class="form-row">
+                            <div class="field">
+                                <label for="settings-email">Email</label>
+                                <input type="email" id="settings-email">
+                            </div>
+                            <div class="field">
+                                <label for="settings-password">Password</label>
+                                <input type="text" id="settings-password">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;">
+                        <button type="submit" class="btn-save">💾 Update Credentials</button>
+                        <button type="button" class="btn-danger" id="reset-data">🔄 Reset All Data</button>
+                    </div>
+                </form>
+
+                <div class="panel-card" style="margin-top:32px;">
+                    <div class="panel-card-title">Google Auth Integration</div>
+                    <p style="color:var(--text-grey);font-size:14px;line-height:1.8;">
+                        Google OAuth integration is prepared for future implementation.<br>
+                        Current placeholder account: <strong
+                            style="color:var(--slime);">abednego0492@gmail.com</strong><br>
+                        When ready, replace the Auth module with Firebase/Google Auth SDK.
+                    </p>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Edit Modal -->
+    <div class="edit-modal-overlay" id="edit-modal">
+        <div class="edit-modal"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
